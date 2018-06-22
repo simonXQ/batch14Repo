@@ -71,25 +71,25 @@
 
 
 -(void)personExamle{
+  //fix bug
+  Person *pObj = [[Person alloc] init];
+  [pObj itsAPublicMethod];
   
-  Person *p = [[Person alloc] init];
-  [p itsAPublicMethod];
+  [pObj setName:@"alok"];
+  [pObj setHobby:@"Teaching"];
   
-  [p setName:@"alok"];
-  [p setHobby:@"Teaching"];
+  NSLog(@"personname is %@ and hobby is %@", pObj.name, pObj.hobby);
   
-  NSLog(@"personname is %@ and hobby is %@", p.name, p.hobby);
+  pObj.name = @"chao";
+  pObj.hobby = @"football";
+  NSLog(@"personname is %@ and hobby is %@", [pObj name], [pObj hobby]);
   
-  p.name = @"chao";
-  p.hobby = @"football";
-  NSLog(@"personname is %@ and hobby is %@", [p name], [p hobby]);
-  
-  [p setAddress:@"133, nyaykhand1"];
+  [pObj setAddress:@"133, nyaykhand1"];
   //or we can use . syntax
-  p.address = @"133, nyaykhand1";
+  pObj.address = @"133, nyaykhand1";
   
-  NSLog(@"address is >> %@", [p address]);
-  NSLog(@"address is > %@", p.address);
+  NSLog(@"address is >> %@", [pObj address]);
+  NSLog(@"address is > %@", pObj.address);
   
   //thumb rule always use setter and getter? why
 }
